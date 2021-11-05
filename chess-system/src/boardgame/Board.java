@@ -36,4 +36,14 @@ public class Board {
 		return pieces[position.getRow()][position.getColunm()];
 	}
 
+	/**
+	 * 
+	 * @param piece na linha e coluna da matriz de peças, atribuir a peça informada pelo jogador
+	 * @param position a posição da peça passa de nula para a posição movimentada pelo jogador 
+	 */
+	public void placePiece(Piece piece, Position position) {
+		pieces[position.getRow()][position.getColunm()] = piece;
+		piece.position = position;
+	}
+	
 }

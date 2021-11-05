@@ -25,7 +25,7 @@ public class Position {
 	public void setColunm(int colunm) {
 		this.colunm = colunm;
 	}
-	
+
 	@Override
 	public String toString() {
 		return row + ", " + colunm;

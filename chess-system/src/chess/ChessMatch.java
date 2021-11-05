@@ -14,6 +14,9 @@ public class ChessMatch {
 		initialSetup();
 	}
 
+	/**
+	 * @return retorna uma matriz de peça de xadrez, correspondente a uma partida
+	 */
 	public ChessPiece[][] getPiece() {
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
 		for (int i = 0; i < board.getRows(); i++) {

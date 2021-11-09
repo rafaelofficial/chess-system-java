@@ -48,6 +48,23 @@ public class Board {
 		pieces[position.getRow()][position.getColunm()] = piece;
 		piece.position = position;
 	}
+	
+	/**
+	 * @param position remove a peça da posição após movimentar
+	 * @return retorna a peça retirada
+	 */
+	public Piece removePiece(Position position) {
+		if (!positionExists(position)) {
+			throw new BoardException("Position not on the board!");
+		}
+		if (piece(position) == null) {
+			return null;
+		}
+		Piece aux = piece(position);
+		aux.position = null;
+		pieces[position.getRow()][position.getColunm()] = null;
+		return aux;
+	}
 
 	/**
 	 * @method Método auxiliar

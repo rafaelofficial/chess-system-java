@@ -29,6 +29,17 @@ public class ChessMatch {
 	}
 
 	/**
+	 * @param sourcePosition converte as posições de xadrez para a posição de matriz
+	 *                       normal
+	 * @return retorna as posições possíveis
+	 */
+	public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		return board.piece(position).possibleMoves();
+	}
+
+	/**
 	 * @param sourcePosition posição de origem
 	 * @param targetPosition posição de destino
 	 * @return retorna a peça capiturada pelo usuário
@@ -41,8 +52,7 @@ public class ChessMatch {
 		Piece capturedPiece = makeMove(source, target);
 		return (ChessPiece) capturedPiece;
 	}
-	
-	
+
 	/**
 	 * 
 	 * @param source remove uma peça de origem
@@ -58,6 +68,7 @@ public class ChessMatch {
 
 	/**
 	 * valida se existe uma posição de origem
+	 * 
 	 * @param position
 	 */
 	private void validateSourcePosition(Position position) {
@@ -68,7 +79,7 @@ public class ChessMatch {
 			throw new ChessException("There is no possible moves for the chosen piece.");
 		}
 	}
-	
+
 	/**
 	 * valida se existe uma posição de origem e destino
 	 */
@@ -94,17 +105,17 @@ public class ChessMatch {
 	 */
 	private void initialSetup() {
 		placeNewPiece('c', 1, new Rook(board, Color.WHITE));
-        placeNewPiece('c', 2, new Rook(board, Color.WHITE));
-        placeNewPiece('d', 2, new Rook(board, Color.WHITE));
-        placeNewPiece('e', 2, new Rook(board, Color.WHITE));
-        placeNewPiece('e', 1, new Rook(board, Color.WHITE));
-        placeNewPiece('d', 1, new King(board, Color.WHITE));
+		placeNewPiece('c', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('d', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('e', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('e', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('d', 1, new King(board, Color.WHITE));
 
-        placeNewPiece('c', 7, new Rook(board, Color.BLACK));
-        placeNewPiece('c', 8, new Rook(board, Color.BLACK));
-        placeNewPiece('d', 7, new Rook(board, Color.BLACK));
-        placeNewPiece('e', 7, new Rook(board, Color.BLACK));
-        placeNewPiece('e', 8, new Rook(board, Color.BLACK));
-        placeNewPiece('d', 8, new King(board, Color.BLACK));
+		placeNewPiece('c', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('c', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('d', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('e', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('e', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('d', 8, new King(board, Color.BLACK));
 	}
 }

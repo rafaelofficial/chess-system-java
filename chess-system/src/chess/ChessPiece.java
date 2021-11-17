@@ -18,6 +18,13 @@ public abstract class ChessPiece extends Piece {
 	}
 	
 	/**
+	 * @return converte posição (position) de matriz para posição de xadrez (ChessPosition)
+	 */
+	public ChessPosition getChessPosition() {
+		return ChessPosition.fromPosition(position);
+	}
+	
+	/**
 	 * @param position verifica se existe uma peça adversaria na posição
 	 * @return caso p (peça adversario) for nulo e p.getColor for diferente da cor da peça do jogador
 	 */

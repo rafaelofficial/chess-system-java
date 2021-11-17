@@ -35,7 +35,7 @@ public class ChessPosition {
 	 * @return retorna a formula inversa do método {@link #toPosition()}
 	 */
 	protected static ChessPosition fromPosition(Position position) {
-		return new ChessPosition((char) ('a' - position.getColunm()), 8 - position.getRow());
+		return new ChessPosition((char) ('a' + position.getColunm()), 8 - position.getRow());
 	}
 
 	@Override

@@ -6,7 +6,7 @@
 
 ### System design
 
-[System design](https://github.com/acenelio/chess-system-design)
+[System design](https://github.com/acenelio/chess-system-design/blob/master/chess-system-design.png)
 
 ### Creating project and git repository
 

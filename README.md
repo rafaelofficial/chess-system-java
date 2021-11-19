@@ -14,9 +14,13 @@
 - Github: create a new project
   - NOTE: choose .gitignore type as Java
 - Open a terminal in project folder, and perform the following commands:
-git init \n
-git remote add origin <https://github.com/rafaelofficial/chess-system-java.git> \n
-git pull origin main \n
-git add . \n
-git commit -m "Project created" \n
-git push -u origin main \n
+
+```bash
+#!/bin/bash
+git init
+git remote add origin <https://github.com/rafaelofficial/chess-system-java.git>
+git pull origin main
+git add .
+git commit -m "Project created"
+git push -u origin main
+```
